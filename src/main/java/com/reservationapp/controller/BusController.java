@@ -30,14 +30,14 @@ public class BusController {
         return new ResponseEntity<>(dto, HttpStatus.CREATED);
     }
 
-    @GetMapping
-    public List<Route> searchBuses(
-            @RequestParam("fromLocation") String fromLocation,
-            @RequestParam("toLocation") String toLocation,
-            @RequestParam("fromDate") String fromDate) {
-        //routeRepository.findFromLocationAndToLocationAndFromDate
-        return null;
-    }
+//    @GetMapping
+//    public List<Route> searchBuses(
+//            @RequestParam("fromLocation") String fromLocation,
+//            @RequestParam("toLocation") String toLocation,
+//            @RequestParam("fromDate") String fromDate) {
+//        //routeRepository.findFromLocationAndToLocationAndFromDate
+//        return null;
+//    }
 
 
 }

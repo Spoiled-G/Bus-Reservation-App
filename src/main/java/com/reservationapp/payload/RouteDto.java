@@ -17,6 +17,7 @@ public class RouteDto {
     private String fromTime;
     private String toTime;
     private String totalDuration;
-    private List<SubRouteDto> subRoutes;
+    private long BusId;
+   // private List<SubRouteDto> subRoutes;
 }
 

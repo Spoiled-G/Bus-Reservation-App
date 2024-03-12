@@ -16,7 +16,7 @@ public class Bus {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private Long busId;
 
 
 
@@ -36,8 +36,8 @@ public class Bus {
     private int availableSeats;
 
 
-    @OneToOne(mappedBy = "bus")
-    private Route route;
+//    @OneToOne(mappedBy = "bus")
+//    private Route route;
 
 
 

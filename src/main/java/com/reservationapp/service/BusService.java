@@ -44,43 +44,45 @@ public class BusService {
         // Save Bus entity
         Bus savedBus = busRepository.save(bus);
 
-        // Map RouteDto to Route entity manually
-        RouteDto routeDto = busDto.getRoute();
-        Route route = new Route();
-        route.setFromLocation(routeDto.getFromLocation());
-        route.setToLocation(routeDto.getToLocation());
-        route.setFromDate(routeDto.getFromDate());
-        route.setToDate(routeDto.getToDate());
-        route.setTotalDuration(routeDto.getTotalDuration());
-        route.setFromTime(routeDto.getFromTime());
-        route.setToTime(routeDto.getToTime());
-        // Other fields...
 
-        route.setBus(savedBus);
 
-        // Save Route entity
-        Route savedRoute = routeRepository.save(route);
-
-        // Map and save SubRoutes manually
-        List<SubRouteDto> subRoutesDto = routeDto.getSubRoutes();
-        List<SubRoute> subRoutes = subRoutesDto.stream()
-                .map(dto -> {
-                    SubRoute subRoute = new SubRoute();
-                    subRoute.setFromLocation(dto.getFromLocation());
-                    subRoute.setToLocation(dto.getToLocation());
-                    subRoute.setFromDate(dto.getFromDate());
-                    subRoute.setToDate(dto.getToDate());
-                    subRoute.setTotalDuration(dto.getTotalDuration());
-                    subRoute.setFromTime(dto.getFromTime());
-                    subRoute.setToTime(dto.getToTime());
-                    subRoute.setRoute(savedRoute);
-
-                    return subRoute;
-                })
-                .collect(Collectors.toList());
-
-        // Save SubRoutes
-        subRouteRepository.saveAll(subRoutes);
+//        // Map RouteDto to Route entity manually
+//        RouteDto routeDto = busDto.getRoute();
+//        Route route = new Route();
+//        route.setFromLocation(routeDto.getFromLocation());
+//        route.setToLocation(routeDto.getToLocation());
+//        route.setFromDate(routeDto.getFromDate());
+//        route.setToDate(routeDto.getToDate());
+//        route.setTotalDuration(routeDto.getTotalDuration());
+//        route.setFromTime(routeDto.getFromTime());
+//        route.setToTime(routeDto.getToTime());
+//        // Other fields...
+//
+//        route.setBus(savedBus);
+//
+//        // Save Route entity
+//        Route savedRoute = routeRepository.save(route);
+//
+//        // Map and save SubRoutes manually
+//        List<SubRouteDto> subRoutesDto = routeDto.getSubRoutes();
+//        List<SubRoute> subRoutes = subRoutesDto.stream()
+//                .map(dto -> {
+//                    SubRoute subRoute = new SubRoute();
+//                    subRoute.setFromLocation(dto.getFromLocation());
+//                    subRoute.setToLocation(dto.getToLocation());
+//                    subRoute.setFromDate(dto.getFromDate());
+//                    subRoute.setToDate(dto.getToDate());
+//                    subRoute.setTotalDuration(dto.getTotalDuration());
+//                    subRoute.setFromTime(dto.getFromTime());
+//                    subRoute.setToTime(dto.getToTime());
+//                    subRoute.setRoute(savedRoute);
+//
+//                    return subRoute;
+//                })
+//                .collect(Collectors.toList());
+//
+//        // Save SubRoutes
+//        subRouteRepository.saveAll(subRoutes);
 
         // Map Bus entity back to BusDto manually
         BusDto savedBusDto = new BusDto();

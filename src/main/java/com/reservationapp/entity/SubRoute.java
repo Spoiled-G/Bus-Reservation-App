@@ -17,7 +17,7 @@ public class SubRoute {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private Long subRouteId;
 
     private String fromLocation;
     private String toLocation;
@@ -27,7 +27,7 @@ public class SubRoute {
     private String toTime;
     private String totalDuration;
 
-    @ManyToOne
-    @JoinColumn(name = "route_id")
-    private Route route;
+//    @ManyToOne
+//    @JoinColumn(name = "route_id")
+//    private Route route;
 }
