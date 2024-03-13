@@ -10,7 +10,7 @@ import com.reservationapp.repository.BusRepository;
 
 import com.reservationapp.repository.RouteRepository;
 import com.reservationapp.repository.SubRouteRepository;
-import jakarta.transaction.Transactional;
+import javax.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -30,7 +30,7 @@ public class BusService {
     private SubRouteRepository subRouteRepository;
 
 
-    @Transactional
+    //@Transactional
     public BusDto addBus(BusDto busDto) {
         // Map BusDto to Bus entity manually
         Bus bus = new Bus();

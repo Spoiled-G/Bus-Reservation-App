@@ -1,7 +1,7 @@
 package com.reservationapp.payload;
 
 import com.reservationapp.entity.Driver;
-import jakarta.persistence.Column;
+import javax.persistence.Column;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 

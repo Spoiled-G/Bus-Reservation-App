@@ -1,7 +1,7 @@
 package com.reservationapp.payload;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Lob;
+import javax.persistence.Column;
+import javax.persistence.Lob;
 
 public class UserRegistraionDto {
     private long id;

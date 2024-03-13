@@ -1,9 +1,9 @@
 package com.reservationapp.entity;
 
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.*;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -26,6 +26,9 @@ public class SubRoute {
     private String fromTime;
     private String toTime;
     private String totalDuration;
+    @Column(name = "route_id",nullable = false)
+    private long routeId;
+    private long busId;
 
 //    @ManyToOne
 //    @JoinColumn(name = "route_id")
